@@ -5,57 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Armesin, Joseph Reign D - Student Profile</title>
+
     <style>
-        /* Professional color palette */
+        /* Professional Grey & White Color Palette */
         :root {
-            /* Primary colors */
-            --primary: #1e3a8a;
-            /* Deep navy blue */
-            --primary-light: #3b82f6;
-            /* Bright blue */
-            --primary-dark: #1e40af;
-            /* Dark blue */
+            /* Primary tones */
+            --primary: #4b5563;          /* Medium gray */
+            --primary-light: #6b7280;    /* Light gray */
+            --primary-dark: #374151;     /* Dark gray */
 
-            /* Secondary colors */
-            --secondary: #059669;
-            /* Emerald green */
-            --secondary-light: #10b981;
-            /* Light green */
-            --secondary-dark: #047857;
-            /* Dark green */
+            /* Secondary tones */
+            --secondary: #6b7280;        /* Soft gray */
+            --secondary-light: #9ca3af;  /* Light silver */
+            --secondary-dark: #4b5563;   /* Medium gray */
 
-            /* Accent colors */
-            --accent: #7c3aed;
-            /* Violet purple */
-            --accent-light: #8b5cf6;
-            /* Light purple */
-            --accent-dark: #6d28d9;
-            /* Dark purple */
+            /* Accent tones */
+            --accent: #9ca3af;           /* Silver-gray */
+            --accent-light: #d1d5db;     /* Very light gray */
+            --accent-dark: #6b7280;      /* Gray */
 
             /* Neutral colors */
-            --background: #f8fafc;
-            /* Light blue-gray */
-            --surface: #ffffff;
-            /* White */
-            --text: #1e293b;
-            /* Dark slate */
-            --text-light: #64748b;
-            /* Medium slate */
-            --border: #e2e8f0;
-            /* Light gray */
+            --background: #f3f4f6;       /* Very light grey */
+            --surface: #ffffff;          /* White */
+            --text: #111827;             /* Nearly black */
+            --text-light: #6b7280;       /* Medium gray */
+            --border: #e5e7eb;           /* Light grey */
 
             /* Semantic colors */
-            --success: #10b981;
-            /* Green */
-            --warning: #f59e0b;
-            /* Amber */
-            --error: #ef4444;
-            /* Red */
+            --success: #6ee7b7;
+            --warning: #fcd34d;
+            --error: #fca5a5;
 
             /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
         }
 
         * {
@@ -97,24 +81,14 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
             animation: float 20s ease-in-out infinite;
         }
 
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-
-            33% {
-                transform: translate(30px, -30px) rotate(120deg);
-            }
-
-            66% {
-                transform: translate(-20px, 20px) rotate(240deg);
-            }
+            0%,100% { transform: translate(0,0) rotate(0deg); }
+            33% { transform: translate(30px,-30px) rotate(120deg); }
+            66% { transform: translate(-20px,20px) rotate(240deg); }
         }
 
         .profile-container {
@@ -129,8 +103,8 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 5px solid rgba(255,255,255,0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -143,7 +117,6 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
         }
 
         .profile-info .subtitle {
@@ -153,16 +126,16 @@
         }
 
         .profile-info .tagline {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
             padding: 0.5rem 1.5rem;
             border-radius: 2rem;
             font-weight: 500;
             display: inline-block;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
-        /* Main Content Grid */
+        /* Main Content */
         .main-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -170,7 +143,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Card Component */
         .card {
             background: var(--surface);
             border-radius: 1rem;
@@ -185,13 +157,10 @@
         .card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
             transform: scaleX(0);
-            transform-origin: left;
             transition: transform 0.3s ease;
         }
 
@@ -225,11 +194,10 @@
         .about p {
             color: var(--text);
             margin-bottom: 1rem;
-            line-height: 1.7;
         }
 
         .about .highlight {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(107,114,128,0.1) 0%, rgba(156,163,175,0.1) 100%);
             padding: 1rem;
             border-radius: 0.5rem;
             margin-top: 1rem;
@@ -238,7 +206,7 @@
         }
 
         .about .highlight strong {
-            color: var(--primary);
+            color: var(--primary-dark);
         }
 
         /* Skills Section */
@@ -277,7 +245,7 @@
         }
 
         .contact-item:hover {
-            background: rgba(59, 130, 246, 0.05);
+            background: rgba(107,114,128,0.1);
             transform: translateX(4px);
         }
 
@@ -299,20 +267,18 @@
         }
 
         .education-item:hover {
-            background: rgba(59, 130, 246, 0.05);
+            background: rgba(107,114,128,0.1);
             transform: translateX(4px);
         }
 
         .education-item h3 {
             color: var(--primary);
             font-size: 1.125rem;
-            margin-bottom: 0.25rem;
         }
 
         .education-item .school {
-            color: var(--secondary);
+            color: var(--secondary-dark);
             font-weight: 600;
-            margin-bottom: 0.25rem;
         }
 
         .education-item .date {
@@ -320,10 +286,10 @@
             font-size: 0.875rem;
             margin-bottom: 0.5rem;
             background: var(--surface);
-            display: inline-block;
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             box-shadow: var(--shadow-sm);
+            display: inline-block;
         }
 
         /* Interests Section */
@@ -331,7 +297,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-top: 1rem;
         }
 
         .interest {
@@ -341,17 +306,17 @@
             padding: 0.75rem 1rem;
             background: var(--background);
             border-radius: 0.75rem;
-            transition: all 0.2s ease;
             cursor: pointer;
+            transition: all 0.2s ease;
         }
 
         .interest:hover {
-            background: rgba(124, 58, 237, 0.1);
+            background: rgba(156,163,175,0.15);
             transform: translateY(-2px);
         }
 
         .interest i {
-            color: var(--accent);
+            color: var(--accent-dark);
             font-size: 1.25rem;
         }
 
@@ -376,45 +341,28 @@
             font-size: 0.875rem;
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            .header {
-                padding: 2rem;
-            }
-
-            .profile-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-info h1 {
-                font-size: 2rem;
-            }
-
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-img {
-                width: 90px;
-                height: 60px;
-            }
+            .container { padding: 1rem; }
+            .header { padding: 2rem; }
+            .profile-container { flex-direction: column; text-align: center; }
+            .profile-info h1 { font-size: 2rem; }
+            .main-content { grid-template-columns: 1fr; }
+            .profile-img { width: 120px; height: 120px; }
         }
     </style>
-    <!-- Font Awesome for icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
+
         <!-- Header Section -->
         <header class="header">
             <div class="profile-container">
                 <img src="c:\Users\maryj\Downloads\photo_6141061780650790002_x.jpg" alt="Profile Picture" class="profile-img">
+
                 <div class="profile-info">
                     <h1>Armesin, Joseph Reign D.</h1>
                     <div class="subtitle">Bachelor of Science in Information Technology</div>
@@ -423,8 +371,9 @@
             </div>
         </header>
 
-        <!-- Main Content -->
+        <!-- Main Content Grid -->
         <div class="main-content">
+
             <!-- About Section -->
             <section class="card about">
                 <h2>About Me</h2>
@@ -439,13 +388,12 @@
             <section class="card">
                 <h2>My Skills</h2>
                 <div class="skills">
-                    <span class="skill">Basic coding</span>
+                    <span class="skill">Basic Coding</span>
                     <span class="skill">JavaScript Basics</span>
                     <span class="skill">Microsoft Office</span>
                     <span class="skill">Problem Analysis</span>
                     <span class="skill">Adaptability</span>
                     <span class="skill">Collaborative Learning</span>
-
                     <span class="skill">Critical Thinking</span>
                 </div>
             </section>
@@ -453,82 +401,53 @@
             <!-- Contact Section -->
             <section class="card">
                 <h2>Contact Information</h2>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>josepharmesin9999@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+63 994 006 3203</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Caloocan City, Philippines</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>https://www.linkedin.com/in/josef-armesin-a6aa0539a/</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>github.com/Mijsss</span>
-                </div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><span>josepharmesin9999@gmail.com</span></div>
+                <div class="contact-item"><i class="fas fa-phone"></i><span>+63 994 006 3203</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Caloocan City, Philippines</span></div>
+                <div class="contact-item"><i class="fab fa-linkedin"></i><span>linkedin.com/in/josef-armesin-a6aa0539a</span></div>
+                <div class="contact-item"><i class="fab fa-github"></i><span>github.com/Mijsss</span></div>
             </section>
 
             <!-- Education Section -->
             <section class="card">
                 <h2>Educational Background</h2>
+
                 <div class="education-item">
                     <h3>Bachelor of Science in Information Technology</h3>
                     <div class="school">Bestlink College of the Philippines</div>
                     <div class="date">2nd Year Student (2024 - Present)</div>
                     <p>Currently enrolled in foundational IT courses including programming, systems analysis, and database management.</p>
                 </div>
+
                 <div class="education-item">
                     <h3>Senior High School</h3>
                     <div class="school">Mystical Rose School of Caloocan Inc.</div>
-                    <div class="date">Information and Communication Technology(2022 - 2023)</div>
-                    <p>Completed secondary education with focus on Information and Communication Technology</p>
+                    <div class="date">ICT Strand (2022 - 2023)</div>
+                    <p>Completed secondary education with focus on Information and Communication Technology.</p>
                 </div>
             </section>
 
             <!-- Interests Section -->
             <section class="card" style="grid-column: span 2;">
                 <h2>Professional Interests</h2>
+
                 <div class="interests">
-                    <div class="interest">
-                        <i class="fas fa-laptop-code"></i>
-                        <span>Web Development</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-database"></i>
-                        <span>Database Systems</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Mobile Applications</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Cybersecurity</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Data Analytics</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-robot"></i>
-                        <span>Artificial Intelligence</span>
-                    </div>
+                    <div class="interest"><i class="fas fa-laptop-code"></i><span>Web Development</span></div>
+                    <div class="interest"><i class="fas fa-database"></i><span>Database Systems</span></div>
+                    <div class="interest"><i class="fas fa-mobile-alt"></i><span>Mobile Applications</span></div>
+                    <div class="interest"><i class="fas fa-shield-alt"></i><span>Cybersecurity</span></div>
+                    <div class="interest"><i class="fas fa-chart-line"></i><span>Data Analytics</span></div>
+                    <div class="interest"><i class="fas fa-robot"></i><span>Artificial Intelligence</span></div>
                 </div>
             </section>
+
         </div>
 
         <!-- Footer -->
         <footer>
             <p>&copy; 2025 Armesin, Joseph Reign D.. All rights reserved.</p>
-
         </footer>
+
     </div>
 </body>
 
